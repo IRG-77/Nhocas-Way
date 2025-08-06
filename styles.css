@@ -1,0 +1,73 @@
+/* Wrap small screen content */
+.small-screen-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/* Make images full width, no gaps */
+.extp-1,
+.extp-2 {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Show these images only on small screens */
+@media (min-width: 1024px) {
+  .small-screen-wrapper {
+    display: none;
+  }
+}
+
+/* Keep original small screen styles for logo-banner and hero */
+.logo-banner {
+  background-color: #8A3F1C;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-banner img.logo-img {
+  max-height: 100%;
+  max-width: 80%;
+  height: auto;
+  width: auto;
+}
+
+.hero {
+  flex-grow: 1;
+  background: url('Stand%20by%20Image.jpg') center center / contain no-repeat;
+  background-color: #8A3F1C;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px; /* reasonable minimum */
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.45);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .logo-banner {
+    height: 140px;
+  }
+  .overlay h1 {
+    font-size: 2.2rem;
+  }
+  .overlay p {
+    font-size: 1.2rem;
+  }
+  .overlay span {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nhocas Way – Coming Soon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Georgia', serif;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    /* Default: small screens vertical layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .extp-container {
+      flex-grow: 1;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
+
+    .hero {
+      flex-grow: 1;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      display: block;
+    }
+
+    .logo-banner {
+      height: 120px;
+      background-color: #8A3F1C;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-shrink: 0;
+      display: flex;
+    }
+
+    .logo-banner img.logo-img {
+      max-height: 100%;
+      max-width: 80%;
+      height: auto;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .extp-img,
+    .hero-img {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      pointer-events: none;
+    }
+
+    .overlay h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .overlay p {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .overlay span {
+      font-size: 1rem;
+      font-style: italic;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .logo-banner {
+        height: 100px;
+      }
+
+      .overlay h1 {
+        font-size: 2rem;
+      }
+
+      .overlay p {
+        font-size: 1.1rem;
+      }
+
+      .overlay span {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Large screen layout with sidebars and hero in a row */
+    @media (min-width: 1024px) {
+      html, body {
+        overflow: auto;
+        height: 100vh;
+      }
+
+      body {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+      }
+
+      /* Hide small screen elements */
+      .extp-container,
+      .logo-banner {
+        display: none;
+      }
+
+      /* Show sidebars */
+      .sidebar-left,
+      .sidebar-right {
+        display: block;
+        width: 10vw;
+        background: #8A3F1C url('Logo.jpg') center center no-repeat;
+        background-size: 80%;
+      }
+
+      .sidebar-left {
+        border-right: 2px solid rgba(0,0,0,0.4);
+      }
+
+      .sidebar-right {
+        border-left: 2px solid rgba(0,0,0,0.4);
+      }
+
+      /* Hero in center fills remaining space */
+      .hero {
+        flex-grow: 1;
+        height: 100%;
+        position: relative;
+        background: url('Stand%20by%20Image.jpg') center center / contain no-repeat;
+        background-color: #8A3F1C;
+        overflow: hidden;
+        display: block;
+      }
+
+      /* Hide hero img (background used instead) */
+      .hero-img {
+        display: none !important;
+      }
+
+      /* Overlay remains on hero */
+      .overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.45);
+        pointer-events: none;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="extp-container">
+    <img src="extp-2.jpg" alt="Extra Top Image 2" class="extp-img" />
+  </div>
+
+  <div class="logo-banner">
+    <img src="Logo.jpg" alt="Nhocas Way Logo" class="logo-img" />
+  </div>
+
+  <div class="sidebar-left"></div>
+
+  <div class="hero">
+    <img src="Stand%20by%20Image.jpg" alt="Stand By" class="hero-img" />
+    <div class="overlay">
+      <h1>Nhocas Way</h1>
+      <p>An untamed journey awaits.</p>
+      <span>Coming Soon</span>
+    </div>
+  </div>
+
+  <div class="sidebar-right"></div>
+</body>
+</html>
